@@ -28,3 +28,18 @@ var search = function(nums, target) {
 };
 
 //Binary search in recursion
+function recersivSearch(low, heigh, key) {
+    if (low === heigh) {
+        if (arr[0]=== key) return 0;
+        else return -1;
+    }
+    mid = (low + heigh ) / 2;
+    if (arr[mid] === key) {
+        return mid
+    }
+    if (arr[mid] > key) {
+        return recersivSearch(mid + 1, heigh, key)
+    }else {
+        return recersivSearch(low, mid - 1, key);
+    }
+}
